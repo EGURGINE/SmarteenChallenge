@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
 
     [Header("Ã¼·Â")]
     public Slider HP_Slider;
+    public Text HP_Text;
     public float Cur_HP;
     public float Max_HP;
 
@@ -21,7 +22,11 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        Cur_HP = 100f;
+        Max_HP = 100f;
+
         CC = GetComponent<CharacterController>();
+        HP_Handle();
     }
 
     void Update()
@@ -47,5 +52,10 @@ public class Player : MonoBehaviour
         dir.Normalize();
         dir.y = Y_velopcity;
         CC.Move(dir * Speed * Time.deltaTime);
+    }
+
+    public void HP_Handle()
+    {
+        HP_Slider.value = (float)Cur_HP / (float)Max_HP;
     }
 }
