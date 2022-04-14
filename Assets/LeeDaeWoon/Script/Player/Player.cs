@@ -18,6 +18,11 @@ public class Player : MonoBehaviour
     public float Cur_HP;
     public float Max_HP;
 
+    [Header("Ä«¸Þ¶ó")]
+    public float Rotation_Speed;
+    private float Rx;
+    private float Ry;
+
     CharacterController CC;
 
     void Start()
@@ -32,6 +37,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
+        Camera_Rotation();
     }
 
     public void Move()
@@ -49,9 +55,23 @@ public class Player : MonoBehaviour
         float v = Input.GetAxis("Vertical");
 
         Vector3 dir = Vector3.right * h + Vector3.forward * v;
+        dir = Camera.main.transform.TransformDirection(dir);
         dir.Normalize();
         dir.y = Y_velopcity;
         CC.Move(dir * Speed * Time.deltaTime);
+    }
+
+    public void Camera_Rotation()
+    {
+        float Mx = Input.GetAxis("Mouse X");
+        float My = Input.GetAxis("Mouse Y");
+
+        Rx += Rotation_Speed * My * Time.deltaTime;
+        Ry += Rotation_Speed * Mx * Time.deltaTime;
+
+        Rx = Mathf.Clamp(Rx, -80f, 80f);
+
+        transform.eulerAngles = new Vector3(-Rx, Ry, 0f);
     }
 
     public void HP_Handle()
