@@ -22,7 +22,6 @@ public class Monster : MonoBehaviour
         if (playerDetect == false)
         {
             this.transform.position += transform.right * Time.deltaTime * 3;
-
         }
     }
 
