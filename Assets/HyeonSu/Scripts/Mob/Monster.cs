@@ -9,12 +9,12 @@ public class Monster : MonoBehaviour
     private bool playerDetect = false;
     public bool playerHoover = false;
     private float hooverCnt;
-    void Start()
+    protected virtual void Start()
     {
         InvokeRepeating("MoveTurn", 0, 2);
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if (playerDetect == false && playerHoover == false)
         {

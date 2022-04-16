@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4194957419934461225}
   - component: {fileID: 4194957419934461224}
   - component: {fileID: 4194957419934461237}
-  - component: {fileID: 4194957419934461236}
+  - component: {fileID: 2088061402624905052}
   m_Layer: 8
-  m_Name: Mob
+  m_Name: MethaneGas
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,7 +115,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4194957419934461236
+--- !u!114 &2088061402624905052
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,6 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerObj: {fileID: 0}
+  PlayerHoover: {fileID: 0}
+  playerHoover: 0
 --- !u!1 &4194957421250976476
 GameObject:
   m_ObjectHideFlags: 0

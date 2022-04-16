@@ -5,14 +5,30 @@ using UnityEngine;
 public class Plastic : MonoBehaviour
 {
     private bool skillType = false;
+    private float skillDelay;
     private void Update()
     {
-        if(skillType == false)
-            transform.position += transform.right * Time.deltaTime;
-        else
+        #region ¿Øµµ≈∫ »∏¿¸ µÙ∑π¿Ã
+        skillDelay += Time.deltaTime;
+        if (skillDelay >= 1.5f)
+            skillType = true;
+        if (skillDelay >= 3.5f)
+            skillType = false;
+        if (skillDelay >= 7)
+            Destroy(gameObject);
+        #endregion
+        #region ¿Øµµ≈∫ ¿Ãµø
+        if (skillType == false)
+            transform.position += transform.forward * Time.deltaTime * 3f;
+        else if(skillType == true)
         {
-            gameObject.transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform.position * 0.3f);
-            transform.position += transform.right * Time.deltaTime;
+            Vector3 dir = GameObject.FindGameObjectWithTag("Player").transform.position - this.transform.position;
+
+            transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 1.2f);
+            transform.position += transform.forward * Time.deltaTime * 5f;
+
+            //gameObject.transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform.position);
         }
+        #endregion
     }
 }
