@@ -4,26 +4,19 @@ using UnityEngine;
 
 public class Hoover : MonoBehaviour
 {
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
-
     public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy") && Input.GetMouseButton(0))
+        {
+            other.GetComponent<Monster>().playerHoover = true;
+            Debug.Log("실행");
+        }
+    }
+    public void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log("빨아들이기");
-
-            if (Input.GetMouseButton(0))
-            {
-                Debug.Log("빨아들이기");
-            }
+            other.GetComponent<Monster>().playerHoover = false;
         }
     }
 }
