@@ -5,12 +5,10 @@ using UnityEngine;
 public class Monster : MonoBehaviour
 {
     [SerializeField] private GameObject PlayerObj;
-    private Rigidbody rb;
+    [SerializeField] private GameObject PlayerHoover;
     private bool playerDetect = false;
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
+    public bool playerHoover = false;
+    private float hooverCnt;
     void Start()
     {
         InvokeRepeating("MoveTurn", 0, 2);
@@ -18,36 +16,52 @@ public class Monster : MonoBehaviour
 
     void Update()
     {
-
-        if (playerDetect == false)
+        if (playerDetect == false && playerHoover == false)
         {
             this.transform.position += transform.right * Time.deltaTime * 3;
         }
+        if (playerHoover)
+        {
+            hooverCnt += Time.deltaTime;
+            if (hooverCnt>3)
+            {
+                hooverCnt = 0;
+                Destroy(gameObject);
+            }
+            PlHoover();
+        }
+        else hooverCnt = 0;
     }
-
+    void PlHoover()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, PlayerHoover.transform.position, 0.5f*Time.deltaTime);
+    }
     void MoveTurn()
     {
-        this.transform.rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
+        if (playerHoover==false)
+        {
+            this.transform.rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
+        }
     }
-    private void OnTriggerStay(Collider other)
+    protected virtual void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.CompareTag("Player") && playerHoover ==false)
         {
             playerDetect = true;
             gameObject.transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform.position);
             this.transform.position = Vector3.MoveTowards(this.transform.position, PlayerObj.transform.position, 5 * Time.deltaTime);
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    protected virtual void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Wall")
         {
             MoveTurn();
         }
     }
-    private void OnTriggerExit(Collider other)
+    protected virtual void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             playerDetect = false;
         }
