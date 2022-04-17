@@ -1077,6 +1077,7 @@ MonoBehaviour:
   environmentalGauge: {fileID: 885884270}
   environmentalGaugeMax: 0
   environmentalGaugeCur: 0
+  playerHoover: {fileID: 1232289164}
 --- !u!4 &1086407717
 Transform:
   m_ObjectHideFlags: 0
