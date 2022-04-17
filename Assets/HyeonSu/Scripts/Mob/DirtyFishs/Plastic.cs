@@ -24,7 +24,7 @@ public class Plastic : MonoBehaviour
         {
             Vector3 dir = GameObject.FindGameObjectWithTag("Player").transform.position - this.transform.position;
 
-            transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 1.2f);
+            transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 1.7f);
             transform.position += transform.forward * Time.deltaTime * 5f;
 
             //gameObject.transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform.position);

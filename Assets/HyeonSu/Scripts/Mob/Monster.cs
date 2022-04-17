@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    [SerializeField] private GameObject PlayerObj;
     [SerializeField] private GameObject PlayerHoover;
     private bool playerDetect = false;
     public bool playerHoover = false;
@@ -48,8 +47,9 @@ public class Monster : MonoBehaviour
         if (other.CompareTag("Player") && playerHoover ==false)
         {
             playerDetect = true;
+            CancelInvoke("MoveTurn");
             gameObject.transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform.position);
-            this.transform.position = Vector3.MoveTowards(this.transform.position, PlayerObj.transform.position, 5 * Time.deltaTime);
+            this.transform.position = Vector3.MoveTowards(this.transform.position, GameObject.FindGameObjectWithTag("Player").transform.position, 5 * Time.deltaTime);
         }
     }
     protected virtual void OnCollisionEnter(Collision collision)
@@ -64,6 +64,7 @@ public class Monster : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerDetect = false;
+            InvokeRepeating("MoveTurn", 0, 2);
         }
     }
 }
