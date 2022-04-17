@@ -11,6 +11,7 @@ public class Monster : MonoBehaviour
     protected virtual void Start()
     {
         InvokeRepeating("MoveTurn", 0, 2);
+        GameManager.Instance.environmentalGaugeMax++;
     }
 
     protected virtual void Update()
@@ -25,6 +26,7 @@ public class Monster : MonoBehaviour
             if (hooverCnt>3)
             {
                 hooverCnt = 0;
+                GameManager.Instance.environmentalGaugeCur++;
                 Destroy(gameObject);
             }
             PlHoover();
