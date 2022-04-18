@@ -11,7 +11,7 @@ public class Monster : MonoBehaviour
     protected virtual void Start()
     {
         InvokeRepeating("MoveTurn", 0, 2);
-        GameManager.Instance.environmentalGaugeMax++;
+        //GameManager.Instance.environmentalGaugeMax++;
     }
 
     protected virtual void Update()

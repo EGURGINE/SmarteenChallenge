@@ -1006,6 +1006,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FoodTrash
       objectReference: {fileID: 0}
+    - target: {fileID: 3222474919040133698, guid: 04dd70c04d0c4164f943691171ccab11, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3222474919040133699, guid: 04dd70c04d0c4164f943691171ccab11, type: 3}
       propertyPath: PlayerObj
       value: 
@@ -1133,6 +1137,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31227858563362e44abe080ea881030e, type: 3}
+--- !u!1001 &7227781991212901677
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4386435591483432973, guid: 04add7c1ef626db44b78ae594181f26d, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386435591483432973, guid: 04add7c1ef626db44b78ae594181f26d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386435591483432973, guid: 04add7c1ef626db44b78ae594181f26d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386435591483432973, guid: 04add7c1ef626db44b78ae594181f26d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386435591483432973, guid: 04add7c1ef626db44b78ae594181f26d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386435591483432973, guid: 04add7c1ef626db44b78ae594181f26d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386435591483432973, guid: 04add7c1ef626db44b78ae594181f26d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386435591483432973, guid: 04add7c1ef626db44b78ae594181f26d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386435591483432973, guid: 04add7c1ef626db44b78ae594181f26d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386435591483432973, guid: 04add7c1ef626db44b78ae594181f26d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386435591483432973, guid: 04add7c1ef626db44b78ae594181f26d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386435591483433206, guid: 04add7c1ef626db44b78ae594181f26d, type: 3}
+      propertyPath: m_Name
+      value: OiledPelican
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 04add7c1ef626db44b78ae594181f26d, type: 3}
 --- !u!1001 &8255733857110342224
 PrefabInstance:
   m_ObjectHideFlags: 0
