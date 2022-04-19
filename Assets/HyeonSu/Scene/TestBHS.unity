@@ -995,6 +995,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043341826}
   m_CullTransparentMesh: 1
+--- !u!1001 &1865653036708631183
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1027617611780055324, guid: ac228f476b8a1284587ece8463766a24, type: 3}
+      propertyPath: PlayerHoover
+      value: 
+      objectReference: {fileID: 1266317017}
+    - target: {fileID: 1027617611780055325, guid: ac228f476b8a1284587ece8463766a24, type: 3}
+      propertyPath: m_Name
+      value: SoulOfTheTree
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027617611780055526, guid: ac228f476b8a1284587ece8463766a24, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027617611780055526, guid: ac228f476b8a1284587ece8463766a24, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027617611780055526, guid: ac228f476b8a1284587ece8463766a24, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027617611780055526, guid: ac228f476b8a1284587ece8463766a24, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027617611780055526, guid: ac228f476b8a1284587ece8463766a24, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027617611780055526, guid: ac228f476b8a1284587ece8463766a24, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027617611780055526, guid: ac228f476b8a1284587ece8463766a24, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027617611780055526, guid: ac228f476b8a1284587ece8463766a24, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027617611780055526, guid: ac228f476b8a1284587ece8463766a24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027617611780055526, guid: ac228f476b8a1284587ece8463766a24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1027617611780055526, guid: ac228f476b8a1284587ece8463766a24, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ac228f476b8a1284587ece8463766a24, type: 3}
 --- !u!1001 &3575087259474025274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1191,6 +1252,10 @@ PrefabInstance:
     - target: {fileID: 4386435591483433206, guid: 04add7c1ef626db44b78ae594181f26d, type: 3}
       propertyPath: m_Name
       value: OiledPelican
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386435591483433206, guid: 04add7c1ef626db44b78ae594181f26d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04add7c1ef626db44b78ae594181f26d, type: 3}
