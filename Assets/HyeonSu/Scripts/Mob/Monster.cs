@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Monster : MonoBehaviour
 {
     [SerializeField] private GameObject PlayerHoover;
     private bool playerDetect = false;
     public bool playerHoover = false;
+    private int hoover = 0;
+
     private float hooverCnt;
     protected virtual void Start()
     {
@@ -22,8 +25,20 @@ public class Monster : MonoBehaviour
         }
         if (playerHoover)
         {
+            switch (hoover)
+            {
+                case 4:
+
+                    break;
+                case 3:
+                    break;
+                case 2:
+                    break;
+                case 1:
+                    break;
+            }
             hooverCnt += Time.deltaTime;
-            if (hooverCnt>3)
+            if (hooverCnt > 3)
             {
                 hooverCnt = 0;
                 GameManager.Instance.environmentalGaugeCur++;
@@ -31,7 +46,11 @@ public class Monster : MonoBehaviour
             }
             PlHoover();
         }
-        else hooverCnt = 0;
+        else
+        {
+            hooverCnt = 0;
+            hoover = 0;
+        }
     }
     void PlHoover()
     {
@@ -56,9 +75,36 @@ public class Monster : MonoBehaviour
     }
     protected virtual void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Wall")
+        if (collision.gameObject.CompareTag("Wall"))
         {
             MoveTurn();
+        }
+    }
+    protected virtual void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("PlayerHoover4")&&Input.GetMouseButton(0))
+        {
+            playerHoover = true;
+            hoover = 4;
+        }
+        if (other.CompareTag("PlayerHoover3") && Input.GetMouseButton(0))
+        {
+            playerHoover = true;
+            hoover = 3;
+
+
+        }
+        if (other.CompareTag("PlayerHoover2") && Input.GetMouseButton(0))
+        {
+            playerHoover = true;
+            hoover = 2;
+
+        }
+        if (other.CompareTag("PlayerHoover") && Input.GetMouseButton(0))
+        {
+            playerHoover = true;
+            hoover = 1;
+
         }
     }
     protected virtual void OnTriggerExit(Collider other)

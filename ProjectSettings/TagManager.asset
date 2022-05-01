@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - PlayerHoover
   - MethaneGas
+  - PlayerHoover2
+  - PlayerHoover3
+  - PlayerHoover4
   layers:
   - Default
   - TransparentFX
