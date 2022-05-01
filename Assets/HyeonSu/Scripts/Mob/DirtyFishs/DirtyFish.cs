@@ -18,11 +18,11 @@ public class DirtyFish : Monster
     IEnumerator ShotPlastic()
     {
         yield return new WaitForSeconds(2.5f);
-        Instantiate(Plastic, transform.position, transform.rotation);
+        Instantiate(Plastic, transform.position + new Vector3(0,0.4f,0.1f), transform.rotation);
         yield return new WaitForSeconds(0.6f);
-        Instantiate(Plastic, transform.position, transform.rotation);
+        Instantiate(Plastic, transform.position + new Vector3(0, 0.4f, 0.1f), transform.rotation);
         yield return new WaitForSeconds(0.6f);
-        Instantiate(Plastic, transform.position, transform.rotation);
+        Instantiate(Plastic, transform.position + new Vector3(0, 0.4f, 0.1f), transform.rotation);
         StartCoroutine(ShotPlastic());
     }
     protected override void OnTriggerStay(Collider other)

@@ -19,7 +19,7 @@ public class Plastic : MonoBehaviour
         #endregion
         #region ¿Øµµ≈∫ ¿Ãµø
         if (skillType == false)
-            transform.position += transform.forward * Time.deltaTime * 3f;
+            transform.position += transform.forward * Time.deltaTime * 5f;
         else if(skillType == true)
         {
             Vector3 dir = GameObject.FindGameObjectWithTag("Player").transform.position - this.transform.position;
