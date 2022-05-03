@@ -10,7 +10,6 @@ public class Monster : MonoBehaviour
     public bool playerHoover = false;
     private int hoover = 0;
 
-    private float hooverCnt;
     protected virtual void Start()
     {
         InvokeRepeating("MoveTurn", 0, 2);
@@ -25,36 +24,28 @@ public class Monster : MonoBehaviour
         }
         if (playerHoover)
         {
-            switch (hoover)
-            {
-                case 4:
-
-                    break;
-                case 3:
-                    break;
-                case 2:
-                    break;
-                case 1:
-                    break;
-            }
-            hooverCnt += Time.deltaTime;
-            if (hooverCnt > 3)
-            {
-                hooverCnt = 0;
-                GameManager.Instance.environmentalGaugeCur++;
-                Destroy(gameObject);
-            }
             PlHoover();
         }
-        else
-        {
-            hooverCnt = 0;
-            hoover = 0;
-        }
+        else hoover = 0;
     }
     void PlHoover()
     {
-        transform.position = Vector3.MoveTowards(transform.position, PlayerHoover.transform.position, 0.5f*Time.deltaTime);
+        switch (hoover)
+        {
+            case 4:
+                transform.position = Vector3.MoveTowards(transform.position, PlayerHoover.transform.position, 6.5f * Time.deltaTime);
+                break;
+            case 3:
+                transform.position = Vector3.MoveTowards(transform.position, PlayerHoover.transform.position, 6f * Time.deltaTime);
+                break;
+            case 2:
+                transform.position = Vector3.MoveTowards(transform.position, PlayerHoover.transform.position, 5.5f * Time.deltaTime);
+
+                break;
+            case 1:
+                transform.position = Vector3.MoveTowards(transform.position, PlayerHoover.transform.position, 5f * Time.deltaTime);
+                break;
+        }
     }
     void MoveTurn()
     {
@@ -84,27 +75,44 @@ public class Monster : MonoBehaviour
     {
         if (other.CompareTag("PlayerHoover4")&&Input.GetMouseButton(0))
         {
-            playerHoover = true;
             hoover = 4;
-        }
-        if (other.CompareTag("PlayerHoover3") && Input.GetMouseButton(0))
-        {
+            Debug.Log(hoover);
             playerHoover = true;
+            transform.DOScale(0.01f, 0.5f).SetEase(Ease.OutBounce);
+
+        }
+        else if (other.CompareTag("PlayerHoover3") && Input.GetMouseButton(0))
+        {
             hoover = 3;
-
+            Debug.Log(hoover);
+            playerHoover = true;
+            transform.DOScale(0.5f, 2f).SetEase(Ease.OutBounce);
 
         }
-        if (other.CompareTag("PlayerHoover2") && Input.GetMouseButton(0))
+        else if (other.CompareTag("PlayerHoover2") && Input.GetMouseButton(0))
         {
-            playerHoover = true;
             hoover = 2;
+            Debug.Log(hoover);
+            playerHoover = true;
+        }
+        else if (other.CompareTag("PlayerHoover1") && Input.GetMouseButton(0))
+        {
+            hoover = 1;
+            Debug.Log(hoover);
+            playerHoover = true;
+        }
+        else if (other.CompareTag("PlayerHoover") && Input.GetMouseButton(0))
+        {
+            GameManager.Instance.environmentalGaugeCur++;
+            Debug.Log("end");
+            Destroy(gameObject);
 
         }
-        if (other.CompareTag("PlayerHoover") && Input.GetMouseButton(0))
+        else
         {
-            playerHoover = true;
-            hoover = 1;
 
+            playerHoover = false;
+            hoover = 0;
         }
     }
     protected virtual void OnTriggerExit(Collider other)

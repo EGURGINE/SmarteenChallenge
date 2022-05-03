@@ -10,6 +10,7 @@ TagManager:
   - PlayerHoover2
   - PlayerHoover3
   - PlayerHoover4
+  - PlayerHoover1
   layers:
   - Default
   - TransparentFX
